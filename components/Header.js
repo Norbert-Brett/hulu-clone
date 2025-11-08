@@ -4,7 +4,7 @@ import { HomeIcon ,CheckBadgeIcon ,MagnifyingGlassIcon,UserIcon,RectangleStackIc
 function Header() {
 	return (
 		<header className=" w-full flex flex-col sm:flex-row m-5 justify-evenly items-center h-auto">
-			<div className="flex items-center flex-grow justify-evenly max-w-2xl text-green-400 ">
+			<div className="flex items-center grow justify-evenly max-w-2xl text-green-400 ">
 				<HeaderItem title='Home' Icon={HomeIcon} />
 				<HeaderItem title='Trending' Icon={BoltIcon} />
 				<HeaderItem title='Verified' Icon={CheckBadgeIcon} />

@@ -16,7 +16,7 @@ function Navbar() {
           </h2>
         ))}
       </div>
-      <div className='absolute top-0 right-0 bg-gradient-to-l from-[#06202A] h-10 w-1/12' />
+      <div className='absolute top-0 right-0 bg-linear-to-l from-[#06202A] h-10 w-1/12' />
     </nav>
   )
 }
