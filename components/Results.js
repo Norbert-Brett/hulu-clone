@@ -4,11 +4,13 @@ import FlipMove from "react-flip-move"
 function Results(results) {
 	const Array = results.results
 	return (
-		<FlipMove className="px-5 my-10 gap-3 sm:grid md:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
-			{Array.map(result =>(
-				<Thumbnail key={result.id} result={result}/>
-			))}
-		</FlipMove>
+		<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+			<FlipMove className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+				{Array.map(result =>(
+					<Thumbnail key={result.id} result={result}/>
+				))}
+			</FlipMove>
+		</div>
 	)
 }
 

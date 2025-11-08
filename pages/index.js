@@ -2,20 +2,22 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import Navbar from '../components/Navbar'
 import Results from '../components/Results'
+import Footer from '../components/Footer'
 import requests from '../utils/requests'
 
 export default function Home({results}) {
   
   return (
-    <div>
+    <div className="min-h-screen bg-brand-dark flex flex-col">
       <Head>
-        <title>Hulu Clone</title>
-        <meta name="description" content="Hulu clone created with Next.JS and TailwindCSS" />
+        <title>Nulu - Stream TV & Movies</title>
+        <meta name="description" content="Stream thousands of shows and movies with Nulu" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Navbar />
       <Results results={results}/>
+      <Footer />
     </div>
   )
 }

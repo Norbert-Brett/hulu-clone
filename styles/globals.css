@@ -5,6 +5,13 @@
 
 @theme {
   --breakpoint-3xl: 2000px;
+  
+  /* Custom Design System Colors */
+  --color-brand-green: #00FF85;
+  --color-brand-dark: #0A0E27;
+  --color-brand-darker: #050812;
+  --color-brand-gray: #1A1F3A;
+  --color-brand-light: #E8F5F1;
 }
 
 /*
@@ -27,10 +34,31 @@
 
 @layer base {
 	body {
-		@apply bg-[#06202A] text-gray-300;
+		@apply bg-brand-dark text-gray-100;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
 	}
 	h1 {
-		@apply text-4xl;
+		@apply text-4xl font-bold;
 	}
-	h2 {}
+	h2 {
+		@apply text-2xl font-semibold;
 	}
+}
+
+@layer utilities {
+	.text-brand {
+		color: var(--color-brand-green);
+	}
+	.bg-brand {
+		background-color: var(--color-brand-green);
+	}
+	.bg-brand-dark {
+		background-color: var(--color-brand-dark);
+	}
+	.bg-brand-darker {
+		background-color: var(--color-brand-darker);
+	}
+	.border-brand {
+		border-color: var(--color-brand-green);
+	}
+}

@@ -1,26 +1,31 @@
 import HeaderItem from "./HeaderItem"
-import { HomeIcon ,CheckBadgeIcon ,MagnifyingGlassIcon,UserIcon,RectangleStackIcon,BoltIcon } from '@heroicons/react/24/outline'
+import Logo from "./Logo"
+import SearchBar from "./SearchBar"
+import { HomeIcon, UserIcon, BoltIcon ,TrophyIcon} from '@heroicons/react/24/outline'
+import { useRouter } from 'next/router'
 
 function Header() {
+	const router = useRouter()
+
 	return (
-		<header className=" w-full flex flex-col sm:flex-row m-5 justify-evenly items-center h-auto">
-			<div className="flex items-center grow justify-evenly max-w-2xl text-green-400 ">
-				<HeaderItem title='Home' Icon={HomeIcon} />
-				<HeaderItem title='Trending' Icon={BoltIcon} />
-				<HeaderItem title='Verified' Icon={CheckBadgeIcon} />
-				<HeaderItem title='Collections' Icon={RectangleStackIcon} />
-				<HeaderItem title='Search' Icon={MagnifyingGlassIcon} />
-				<HeaderItem title='Account' Icon={UserIcon} />
-
+		<header className="sticky top-0 z-50 w-full bg-brand-darker/95 backdrop-blur-sm border-b border-gray-800/50 shadow-lg">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex items-center justify-between py-3">
+					<div 
+						className="cursor-pointer"
+						onClick={() => router.push('/')}
+					>
+						<Logo />
+					</div>
+					<nav className="flex items-center gap-1 text-brand">
+						<HeaderItem title='Home' Icon={HomeIcon} onClick={() => router.push('/')} />
+						<HeaderItem title='Trending' Icon={BoltIcon} onClick={() => router.push('/?genre=fetchTrending')} />
+						<HeaderItem title='Top Rated' Icon={TrophyIcon} onClick={() => router.push('/?genre=fetchTopRated')} />
+						<SearchBar />
+						<HeaderItem title='Account' Icon={UserIcon} onClick={() => router.push('/auth')} />
+					</nav>
+				</div>
 			</div>
-			<img
-				className="object-contain"
-				src="https://images.squarespace-cdn.com/content/v1/583efce6b8a79bc809cc05b3/1639492895954-VXX7I9UFF98JEZPIR7P1/Hulu_Logo.svg.png?format=500w"
-				width={100}
-				height={100}
-				lazy
-			/>
-
 		</header>
 	)
 }

@@ -1,9 +1,11 @@
-
-function HeaderItem({ Icon, title}) {
+function HeaderItem({ Icon, title, onClick }) {
 	return (
-		<div className="group flex flex-col items-center cursor-pointer w-12 sm:w-20 hover:text-white">
-			<Icon className="h-8 mb-1 group-hover:animate-bounce" />
-			<p className="opacity-0 group-hover:opacity-100 tracking-widest">{title}</p>
+		<div 
+			onClick={onClick}
+			className="group flex flex-col items-center cursor-pointer px-2 py-1 rounded-lg transition-all duration-200 hover:bg-gray-800/50"
+		>
+			<Icon className="h-5 w-5 mb-0.5 transition-transform group-hover:scale-110" />
+			<p className="text-[10px] font-medium opacity-70 group-hover:opacity-100 transition-opacity">{title}</p>
 		</div>
 	)
 }
